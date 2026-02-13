@@ -12,7 +12,6 @@ type Problem = {
   slug: string;
 };
 
-// 这里会在构建时由 Content Collections 生成真实数据
 const mockProblems: Problem[] = [
   {
     title: "两数之和",
@@ -56,24 +55,90 @@ export default function ProblemsPage() {
     return mockProblems.filter((p) => p.difficulty === selectedDifficulty);
   }, [selectedDifficulty]);
 
+  const stats = useMemo(() => {
+    return {
+      total: mockProblems.length,
+      easy: mockProblems.filter((p) => p.difficulty === "简单").length,
+      medium: mockProblems.filter((p) => p.difficulty === "中等").length,
+      hard: mockProblems.filter((p) => p.difficulty === "困难").length,
+    };
+  }, []);
+
   return (
-    <div className="container py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">C++ 题库</h1>
-        <DifficultyFilter value={selectedDifficulty} onChange={setSelectedDifficulty} />
-      </div>
+    <div className="min-h-screen bg-[rgb(var(--color-bg))]">
+      <div className="container py-12 md:py-20">
+        {/* Header - 标题和筛选器 */}
+        <div className="mb-12">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+              <span className="text-[rgb(var(--color-text-primary))]">C++ </span>
+              <span className="text-[rgb(var(--color-accent))]">题库</span>
+            </h1>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProblems.map((problem) => (
-          <ProblemCard key={problem.slug} problem={problem} />
-        ))}
-      </div>
+            {/* 统计信息 + 筛选器 */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              {/* 统计卡片 */}
+              <div className="flex gap-3">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-[rgb(var(--color-text-primary))]">
+                    {stats.total}
+                  </div>
+                  <div className="text-sm text-[rgb(var(--color-text-muted))]">全部</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold" style={{ color: 'rgb(var(--color-easy))' }}>
+                    {stats.easy}
+                  </div>
+                  <div className="text-sm text-[rgb(var(--color-text-muted))]">简单</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold" style={{ color: 'rgb(var(--color-medium))' }}>
+                    {stats.medium}
+                  </div>
+                  <div className="text-sm text-[rgb(var(--color-text-muted))]">中等</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold" style={{ color: 'rgb(var(--color-hard))' }}>
+                    {stats.hard}
+                  </div>
+                  <div className="text-sm text-[rgb(var(--color-text-muted))]">困难</div>
+                </div>
+              </div>
 
-      {filteredProblems.length === 0 && (
-        <div className="text-center py-12 text-muted-foreground">
-          没有找到符合条件的题目
+              {/* 筛选器 */}
+              <DifficultyFilter value={selectedDifficulty} onChange={setSelectedDifficulty} />
+            </div>
+          </div>
         </div>
-      )}
+
+        {/* 题目列表 */}
+        <div className="max-w-7xl mx-auto">
+          {filteredProblems.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {filteredProblems.map((problem, index) => (
+                <div
+                  key={problem.slug}
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <ProblemCard problem={problem} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[rgb(var(--color-bg-subtle))]">
+                <svg className="w-10 h-10 text-[rgb(var(--color-text-muted))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 15.656l6.828-6.828a4 4 0 015.656-15.656c0-3.2-2.28-5.672-5.672s1.4 0 6.828 6.828a4 4 0 015.656 15.656z" />
+                </svg>
+              </div>
+              <p className="mt-6 text-lg text-[rgb(var(--color-text-muted))]">
+                没有找到符合条件的题目
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
