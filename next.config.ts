@@ -3,7 +3,7 @@ import { withContentCollections } from "@content-collections/next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/cpp-problems",
+  basePath: "/blog",
   images: {
     unoptimized: true,
   },
