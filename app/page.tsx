@@ -16,7 +16,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-[rgb(var(--color-text-secondary))] max-w-2xl mx-auto leading-relaxed">
-              基于 Next.js 16 构建的现代化网站，包含技术博客和 C\+\+\+ 算法题库。
+              基于 Next.js 16 构建的现代化网站，包含技术博客和 C++ 算法题库。
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export default function Home() {
             </Link>
             <Link
               href="/blog"
-              className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg transition-all duration-[var(--transition-base)] hover:duration-[var(--transition-fast)] border-2 border-[rgb(var(--color-border-strong))] bg-transparent text-[rgb(var(--color-text-primary))] hover:bg-[rgb(var(--color-bg-elevated))] hover:border-[rgb(var(--color-accent))]
+              className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg transition-all duration-[var(--transition-base)] hover:duration-[var(--transition-fast)] border-2 border-[rgb(var(--color-border-strong))] bg-transparent text-[rgb(var(--color-text-primary))] hover:bg-[rgb(var(--color-bg-elevated))] hover:border-[rgb(var(--color-accent))]"
             >
               阅读博客
             </Link>
@@ -41,41 +41,24 @@ export default function Home() {
 
       {/* 装饰性分隔线 */}
       <div className="container">
+        <div className="divider max-w-xs mx-auto" />
       </div>
-      </div>
-
 
       {/* Features Section - 清晰的信息架构 */}
-      {/* Features Section - 清晰的信息架构 */}
-      <section className="container py-24 md:py-32">
       <section className="container py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 md:mb-20">
             特性
-            特性
-          </h2>
           </h2>
 
-
-          <div className="grid gap-12 md:grid-cols-3">
           <div className="grid gap-12 md:grid-cols-3">
             {/* 特性 1 */}
-            {/* 特性 1 */}
-            <div className="text-center group">
             <div className="text-center group">
               <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[rgb(var(--color-accent-subtle))] group-hover:bg-[rgb(var(--color-accent))] transition-colors duration-[var(--transition-base)]">
-              <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[rgb(var(--color-accent-subtle))] group-hover:bg-[rgb(var(--color-accent))] transition-colors duration-[var(--transition-base)]">
-                <svg className="w-8 h-8 text-[rgb(var(--color-accent))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <svg className="w-8 h-8 text-[rgb(var(--color-accent))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l7-7 1.21-1.21 1.21 1.21z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l7-7 1.21-1.21 1.21 1.21z" />
-                </svg>
                 </svg>
               </div>
-              </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
               <h3 className="text-xl md:text-2xl font-semibold mb-3">
                 Next.js 16
               </h3>
@@ -103,7 +86,7 @@ export default function Home() {
             <div className="text-center group">
               <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[rgb(var(--color-accent-subtle))] group-hover:bg-[rgb(var(--color-accent))] transition-colors duration-[var(--transition-base)]">
                 <svg className="w-8 h-8 text-[rgb(var(--color-accent))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 01-6 0V4a1 1 0 01-1 1h2a1 1 0 011 1v10a1 1 0 011-1h-6a1 1 0 01-1V6a1 1 0 01-1 1-1 1-3 0 01-6 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 01-6 0V4a1 1 0 01-1 1h2a1 1 0 011 1v10a1 1 0 011-1h-6a1 1 0 01-1-V6a1 1 0 01-1 1-1 1-3 0 01-6 0z" />
                 </svg>
               </div>
               <h3 className="text-xl md:text-2xl font-semibold mb-3">
@@ -141,7 +124,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/blog"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg transition-all duration-[var(--transition-base)] hover:duration-[var(--transition-fast)] border-2 border-[rgb(var(--color-text-primary))] bg-transparent text-[rgb(var(--color-text-primary))] hover:bg-[rgb(var(--color-bg-elevated))]
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg transition-all duration-[var(--transition-base)] hover:duration-[var(--transition-fast)] border-2 border-[rgb(var(--color-text-primary))] bg-transparent text-[rgb(var(--color-text-primary))] hover:bg-[rgb(var(--color-bg-elevated))]"
               >
                 浏览博客
               </Link>
