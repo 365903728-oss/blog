@@ -16,7 +16,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-[rgb(var(--color-text-secondary))] max-w-2xl mx-auto leading-relaxed">
-              基于 Next.js 16 构建的现代化网站，包含技术博客和 C++ 算法题库。
+              基于 Next.js 16 构建的现代化网站，包含技术博客和 C\+\+\+ 算法题库。
             </p>
           </div>
 
