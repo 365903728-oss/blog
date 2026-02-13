@@ -58,6 +58,7 @@
   * {
     border-color: rgb(var(--color-border));
   }
+}
 
   body {
     @apply bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text-primary))];
